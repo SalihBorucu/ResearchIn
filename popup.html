@@ -27,16 +27,24 @@
     
     .close-button {
         font-weight: bolder;
+        font-weight: bolder;
+        float: right;
+        margin-right: 8px;
+    }
+    
+    ol {
+        overflow-y: auto;
+        max-height: 120px;
     }
 </style>
 
 <body>
     <div class="container-fluid">
-        <h3 style="font-weight:bold; text-align:center;">Leads</h3>
+        <h3 style="font-weight:bold; text-align:center;">Leads - <span id="lead-count"></span></h3>
 
-        <ul id="total">
+        <ol id="total">
 
-        </ul>
+        </ol>
         <input type="text" class="form-control mb-1" id="email" placeholder="example@dwcc.biz">
         <input type="text" class="form-control mb-1" id="name" placeholder="John Doe">
         <input type="text" class="form-control mb-2" id="document" placeholder="Client_Campaign_User_Year_Quarter_Month">

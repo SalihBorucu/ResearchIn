@@ -80,9 +80,12 @@ function addButton() {
 
 addButton();
 
+
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     // listen for messages sent from background.js
     if (request.message === "hello!") {
         addButton();
+        document.getElementById("scraper").removeAttribute("disabled", "");
+        document.getElementById("scraper").innerText = "Save Lead";
     }
 });

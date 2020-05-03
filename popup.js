@@ -12,6 +12,7 @@ port.onMessage.addListener(function(msg) {
     if (msg.leads.length > 0) {
         document.getElementById("total").innerHTML = "";
         msg.leads.forEach((lead, i) => {
+            document.getElementById("lead-count").innerHTML = `(${msg.leads.length})`;
             let node = document.createElement("LI");
             let nodeText = document.createTextNode(
                 lead.name
