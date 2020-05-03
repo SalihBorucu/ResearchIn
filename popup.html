@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="popup.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<style>
+    body {
+        width: 300px;
+        height: auto;
+        background-color: #0077B5;
+        color: white;
+    }
+    
+    .btn-outline-light:hover {
+        color: #0077B5;
+        background-color: #f8f9fa;
+        border-color: #f8f9fa;
+    }
+    
+    .close-button:hover {
+        color: red;
+        cursor: pointer;
+        font-weight: 500;
+    }
+    
+    .close-button {
+        font-weight: bolder;
+    }
+</style>
+
+<body>
+    <div class="container-fluid">
+        <h3 style="font-weight:bold; text-align:center;">Leads</h3>
+
+        <ul id="total">
+
+        </ul>
+        <input type="text" class="form-control mb-1" id="email" placeholder="example@dwcc.biz">
+        <input type="text" class="form-control mb-1" id="name" placeholder="John Doe">
+        <input type="text" class="form-control mb-2" id="document" placeholder="Client_Campaign_User_Year_Quarter_Month">
+        <button class="btn btn-outline-light w-100 mb-3" id="create_button">Export</button>
+    </div>
+</body>
+
+</html>
