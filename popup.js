@@ -351,7 +351,7 @@ window.addEventListener('load', function load(event) {
                     first_name: item.first_name || " ",
                     second_name: item.second_name || " ",
                     title: item.title || " ",
-                    lead_level: " ",
+                    lead_level: item.lead_level || " ",
                     email: " ",
                     phone: " ",
                     switchboard: " ",

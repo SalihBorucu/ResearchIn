@@ -41,6 +41,32 @@ function addButton() {
                             } else {
                                 title = document.getElementsByClassName("pv-position-entity ember-view")[0].firstElementChild.firstElementChild.firstElementChild.children[1].firstElementChild.innerText || '';
                             }
+
+                            let lead_level = "";
+
+                            let titles = {
+                                Engineer: ["engineer", "Engineer"],
+                                Consultant: ["Consultant", "consultant"],
+                                Specialist: ["Specialist", "specialist"],
+                                Analyst: ["Analyst", "analyst"],
+                                Architect: ["Architect", "architect"],
+                                Manager: ["Manager", "manager"],
+                                Director: ["Head", "head", "Director", "director"],
+                                "Vice President": ["VP", "vp", "vice president", "Vice", "vice"],
+                                "C-level": ["Chief", "chief"],
+                            };
+
+                            function levelCheck(level) {
+                                return level.some((o) => title.includes(o));
+                            }
+
+                            for (let x of Object.entries(titles)) {
+                                if (levelCheck(x[1])) {
+                                    lead_level = x[0];
+                                }
+                            }
+
+
                             let address = []
                             if (document.getElementsByClassName("t-16 t-black t-normal inline-block").length > 0) {
                                 address = document.getElementsByClassName("t-16 t-black t-normal inline-block")[0].innerText.split(',')
@@ -62,6 +88,7 @@ function addButton() {
                                     second_name: cleanUp(second_name),
                                     company: cleanUp(company),
                                     title: cleanUp(title),
+                                    lead_level,
                                     country: cleanUp(country),
                                     city: cleanUp(city),
                                     url,
