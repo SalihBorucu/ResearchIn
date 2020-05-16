@@ -31,7 +31,9 @@ chrome.extension.onConnect.addListener(function(port) {
             port.postMessage({ leads: listOfLeads });
         }
         if (msg.msg === "delete_record") {
-            if (msg.id === "all") { listOfLeads = [] }
+            if (msg.id === "all") {
+                listOfLeads = [];
+            }
             listOfLeads.splice(msg.id, 1);
             port.postMessage({ leads: listOfLeads });
         }

@@ -38,22 +38,25 @@ function addButton() {
                             let title = '';
                             if (document.getElementsByClassName("pv-entity__summary-info-v2")[0]) {
                                 title = document.getElementsByClassName("pv-entity__summary-info-v2")[0].children[0].children[1].innerText
-                            } else {
-                                title = document.getElementsByClassName("pv-position-entity ember-view")[0].firstElementChild.firstElementChild.firstElementChild.children[1].firstElementChild.innerText || '';
+                            } else if (document.getElementsByClassName("pv-position-entity ember-view")[0]) {
+                                title = document.getElementsByClassName("pv-position-entity ember-view")[0].firstElementChild.firstElementChild.firstElementChild.children[1].firstElementChild.innerText;
+                            } else if (document.getElementsByClassName('pv-entity__role-container')[0]) {
+                                title = document.getElementsByClassName('pv-entity__role-container')[0]
+                                    .firstElementChild.firstElementChild.firstElementChild.children[1].innerText;
                             }
 
                             let lead_level = "";
 
                             let titles = {
-                                Engineer: ["engineer", "Engineer"],
+                                // Engineer: ["engineer", "Engineer"],
                                 Consultant: ["Consultant", "consultant"],
-                                Specialist: ["Specialist", "specialist"],
+                                Specialist: ["Specialist", "specialist", "Engineer", "engineer"],
                                 Analyst: ["Analyst", "analyst"],
                                 Architect: ["Architect", "architect"],
                                 Manager: ["Manager", "manager"],
                                 Director: ["Head", "head", "Director", "director"],
                                 "Vice President": ["VP", "vp", "vice president", "Vice", "vice"],
-                                "C-level": ["Chief", "chief"],
+                                "C-Level": ["Chief", "chief"],
                             };
 
                             function levelCheck(level) {
