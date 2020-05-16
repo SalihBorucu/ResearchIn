@@ -6,9 +6,8 @@ chrome.runtime.onMessage.addListener((msg, sender) => {
     // First, validate the message's structure.
     if (msg.from === "content" && msg.subject === "showPageAction") {
         // Enable the page-action for the requesting tab.
-        listOfLeads.push(msg.lead);
+        if (msg.lead) { listOfLeads.push(msg.lead) };
         chrome.pageAction.show(sender.tab.id);
-        // alert(listOfLeads)
     }
 });
 
@@ -22,7 +21,6 @@ chrome.extension.onConnect.addListener(function(port) {
             });
             leads.some(function(item, idx) {
                 if (leads.indexOf(item) !== idx) {
-                    console.log();
                     listOfLeads.splice(
                         leads.indexOf(item),
                         1
@@ -33,6 +31,7 @@ chrome.extension.onConnect.addListener(function(port) {
             port.postMessage({ leads: listOfLeads });
         }
         if (msg.msg === "delete_record") {
+            if (msg.id === "all") { listOfLeads = [] }
             listOfLeads.splice(msg.id, 1);
             port.postMessage({ leads: listOfLeads });
         }

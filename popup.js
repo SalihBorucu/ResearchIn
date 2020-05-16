@@ -29,7 +29,7 @@ port.onMessage.addListener(function(msg) {
                 "X"
             );
             closeButton.appendChild(closeButtonText);
-            closeButton.className = "close-button ml-2";
+            closeButton.className = "close-button mr-3";
             document
                 .getElementById(i)
                 .appendChild(closeButton);
@@ -49,7 +49,7 @@ port.onMessage.addListener(function(msg) {
 });
 
 window.addEventListener('load', function load(event) {
-    var createButton = document.getElementById('create_button');
+    let createButton = document.getElementById('create_button');
     createButton.addEventListener('click', function() {
         let regions = {
             EMEA: [
@@ -382,4 +382,14 @@ window.addEventListener('load', function load(event) {
         download()
 
     });
+
+    let clearButton = document.getElementById("clear_list");
+    clearButton.addEventListener('click', function() {
+        port.postMessage({
+            msg: 'delete_record',
+            id: "all",
+        });
+        document.getElementById("lead-count").innerText = "0"
+
+    })
 })

@@ -1,6 +1,6 @@
 {
     "name": "ResearchIn",
-    "version": "1.1",
+    "version": "1.2",
     "manifest_version": 2,
     "description": "Get lead data on to excel",
     "content_scripts": [{
@@ -15,7 +15,7 @@
     "permissions": ["tabs", "storage"],
 
     "page_action": {
-        "default_title": "Test Extension",
+        "default_title": "ResearchIn",
         "default_popup": "popup.html",
         "default_icon": {
             "16": "images/logo.png"

@@ -36,17 +36,23 @@
         overflow-y: auto;
         max-height: 120px;
     }
+    
+    .wrapper {
+        justify-content: space-between;
+    }
 </style>
 
 <body>
     <div class="container-fluid">
-        <h3 style="font-weight:bold; text-align:center;">Leads - <span id="lead-count"></span></h3>
-
+        <div class="wrapper d-flex flex-row mt-2">
+            <h3 style="font-weight:bold; text-align:center;">Leads - <span id="lead-count">0</span></h3>
+            <button class="btn btn-outline-light mb-3 " id="clear_list">Clear List</button>
+        </div>
         <ol id="total">
 
         </ol>
         <input type="text" class="form-control mb-1" id="email" placeholder="example@dwcc.biz">
-        <input type="text" class="form-control mb-1" id="name" placeholder="John Doe">
+        <input type="text" class="form-control mb-1" id="name" placeholder="Jane Doe">
         <input type="text" class="form-control mb-2" id="document" placeholder="Client_Campaign_User_Year_Quarter_Month">
         <button class="btn btn-outline-light w-100 mb-3" id="create_button">Export</button>
     </div>

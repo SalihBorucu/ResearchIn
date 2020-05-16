@@ -107,6 +107,11 @@ function addButton() {
 
 addButton();
 
+chrome.runtime.sendMessage({
+    from: "content",
+    subject: "showPageAction",
+})
+
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     // listen for messages sent from background.js
